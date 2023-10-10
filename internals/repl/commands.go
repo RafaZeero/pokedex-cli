@@ -16,21 +16,21 @@ func createCommands() Commands {
 		"help": {
 			name:        "help",
 			description: "Displays a help message",
-			callback:    commandHelp,
+			callback:    displayHelp,
 		},
 		"exit": {
 			name:        "exit",
 			description: "Exit the Pokedex",
-			callback:    commandExit,
+			callback:    exitProgram,
 		},
 	}
 }
 
-func commandExit() error {
+func exitProgram() error {
 	os.Exit(0)
 	return nil
 }
-func commandHelp() error {
+func displayHelp() error {
 	fmt.Print("\nUsage:\n\n")
 	for _, c := range commands {
 		fmt.Printf("%s: %s\n", c.name, c.description)
